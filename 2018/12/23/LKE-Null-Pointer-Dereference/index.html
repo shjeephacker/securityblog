@@ -7,18 +7,18 @@
   
   <title>LKE: Null Pointer Dereference | Security Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="The blog describes the steps to exloit linux kernel by using a null pointer dereference bug. There are many posts on this topic however I will use most recent OS for this purpose. =Preparation===Insta">
+  <meta name="description" content="The blog describes the steps to exloit linux kernel by using a null pointer dereference bug. There are many posts on this topic however I will use most recent OS for this purpose. #Preparation ##Insta">
 <meta name="keywords" content="linux kernel exploit null pointer dereference">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LKE: Null Pointer Dereference">
 <meta property="og:url" content="https://shjeephacker.github.io/securityblog/2018/12/23/LKE-Null-Pointer-Dereference/index.html">
 <meta property="og:site_name" content="Security Blog">
-<meta property="og:description" content="The blog describes the steps to exloit linux kernel by using a null pointer dereference bug. There are many posts on this topic however I will use most recent OS for this purpose. =Preparation===Insta">
+<meta property="og:description" content="The blog describes the steps to exloit linux kernel by using a null pointer dereference bug. There are many posts on this topic however I will use most recent OS for this purpose. #Preparation ##Insta">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-12-23T04:06:31.138Z">
+<meta property="og:updated_time" content="2018-12-23T05:03:24.628Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LKE: Null Pointer Dereference">
-<meta name="twitter:description" content="The blog describes the steps to exloit linux kernel by using a null pointer dereference bug. There are many posts on this topic however I will use most recent OS for this purpose. =Preparation===Insta">
+<meta name="twitter:description" content="The blog describes the steps to exloit linux kernel by using a null pointer dereference bug. There are many posts on this topic however I will use most recent OS for this purpose. #Preparation ##Insta">
   
     <link rel="alternate" href="/securityblog/atom.xml" title="Security Blog" type="application/atom+xml">
   
@@ -88,14 +88,18 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>The blog describes the steps to exloit linux kernel by using a null pointer dereference bug. There are many posts on this topic however I will use most recent OS for this purpose.</p>
-<p>=Preparation=<br>==Install OS=<br>==Build kernel=<br>==Build module=</p>
-<p>=Write PoC=</p>
-<p>=Run PoC=<br>==Failures seen==</p>
+<p>#Preparation</p>
+<p>##Install OS<br>I will use the most recently OS <em>Kali 2018.04</em> as the target system. I won’t cover the installation here, but to avoid crash the current OS and easiler to check the kernel log, I installed the OS inside <em>vmware player</em>. I don’t find <em>smep</em> in the workstation I’m using, so <em>smep</em> is not covered in the topic.</p>
+<p>##Build kernel<br>To repeat the bug, I also need to compile a kernel module contains <em>NULL Pointer Dereference</em> bug. And in order to load the module, I need to recompile the kernel as <em>Module Signature</em>ed.<br><em>Kali Linux</em> is <em>Debian</em> based, so just follow the link <a href="https://www.debian.org/doc/manuals/debian-handbook/sect.kernel-compilation.en.html" target="_blank" rel="noopener">here</a>.<br>Note that <em>config</em> is from <em>/boot/</em> and I’m using <em>make deb-pkg</em> to generate linux deb files.</p>
+<p>##Build module<br>To avoid build and test the module for multiple times, I disabled the <em>Module Signature</em> feature. Generally speaking, these configs are disabled inside the <em>.config</em>.</p>
+<p>#Write PoC</p>
+<p>#Run PoC</p>
+<p>##Failures seen</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://shjeephacker.github.io/securityblog/2018/12/23/LKE-Null-Pointer-Dereference/" data-id="cjq0df1qm0000btcpaa4id2xl" class="article-share-link">Share</a>
+      <a data-url="https://shjeephacker.github.io/securityblog/2018/12/23/LKE-Null-Pointer-Dereference/" data-id="cjq0fg6tv00001qcp09sqm4mo" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/securityblog/tags/linux-kernel-exploit-null-pointer-dereference/">linux kernel exploit null pointer dereference</a></li></ul>
